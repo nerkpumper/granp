@@ -12,8 +12,17 @@
 		@include('admin.template.partials.nav')
 
 		<section>
-			@yield('content', '')
+
+			<div class="panel panel-default">
+			  <div class="panel-heading">@yield('title', 'Default')</div>
+			  <div class="panel-body">
+			    @yield('content', '')
+			  </div>
+			</div>
+			
 		</section>
+
+		@include('admin.template.partials.footer')		
 		
 	</div>
 
