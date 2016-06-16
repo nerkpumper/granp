@@ -2,10 +2,12 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
+	<link rel='shortcut icon' type='image/x-icon' href='{{ asset('img/logo_egp.ico') }}' />
 	<title>@yield('title', 'Default') | Panel de Administración</title>
 	<link rel="stylesheet" href="{{ asset('plugins/bootstrap/css/bootstrap.css') }}">
 </head>
-<body>
+<body style="background: url('{{ asset ('img/fondo2.jpg') }}') no-repeat center center fixed; background-size: cover;">
+
 
 	<div class="container">
 
@@ -13,7 +15,7 @@
 
 		<section>
 
-			<div class="panel panel-default">
+			<div class="panel @yield('classPanel','panel-default')">
 			  <div class="panel-heading">@yield('title', 'Default')</div>
 			  <div class="panel-body">
 			    @yield('content', '')
