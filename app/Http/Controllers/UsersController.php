@@ -28,6 +28,7 @@ class UsersController extends Controller
      */
     public function create()
     {
+    	//para crear
         return view('admin.users.create');
     }
 
