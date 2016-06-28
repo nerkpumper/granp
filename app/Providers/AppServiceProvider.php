@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace EGP\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

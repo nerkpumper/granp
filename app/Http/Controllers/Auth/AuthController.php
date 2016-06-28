@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace EGP\Http\Controllers\Auth;
 
-use App\User;
+use EGP\User;
 use Validator;
-use App\Http\Controllers\Controller;
+use EGP\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
@@ -49,8 +49,8 @@ class AuthController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
+            'username' => 'required|max:255|unique:users',
+            'fullname' => 'required|max:255',
             'password' => 'required|confirmed|min:6',
         ]);
     }
@@ -64,8 +64,8 @@ class AuthController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
+            'username' => $data['username'],
+            'fullname' => $data['fullname'],
             'password' => bcrypt($data['password']),
         ]);
     }
